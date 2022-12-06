@@ -11,12 +11,15 @@ async function getPeajes(){
 }
 
 async function getPeajesById(id){
-  return await Peaje.findByPk(
-    
-  )
+  return await Peaje.findByPk(id, {
+    attributes: {
+      exclude: attributesToExclude
+    }
+  })
 }
 
 
 module.exports = {
-  getPeajes
+  getPeajes,
+  getPeajesById
 }
