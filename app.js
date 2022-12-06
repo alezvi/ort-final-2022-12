@@ -46,6 +46,11 @@ app.get('listar-peajes', async function(req, res){
   // provincia, número de ruta, y kilómetro. No es necesario usar datos geográficos reales,
   // pero que parezcan reales.
 
+  let obtenerVista = await Cabina.findAll({})
+
+  res.send(obtenerVista);
+
+
 })
 
 
