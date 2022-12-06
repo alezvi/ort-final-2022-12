@@ -11,6 +11,7 @@ La empresa define las tarifas que debe pagar cada tipo de vehículo.
 ### Requerimientos
 
 
+---
 
 ###### ISSUE 1 - Peajes - Listar
 
@@ -37,8 +38,7 @@ Opcional
 - Hacer un endpoint para devolver la informacion detallada de 1 puesto de peaje, por el ID
 - Hacer que <u>mediante query string</u> se pueda ubicar a todos los puestos de peaje de una direccion específica
 
-
-
+---
 
 ###### ISSUE 2 - Tarifas - Listar
 
@@ -63,7 +63,7 @@ Testear
 - Que hay dos tarifas vigentes por cada tipo de vehículo
 - Que la lista está ordenada de forma ascendente por el valor de la tarifas
 
-
+---
 
 ###### ISSUE 3 - Vehiculos - Registro
 
@@ -99,7 +99,7 @@ Testear:
 - Que el endpoint responda con 201 cuando el vehiculo ya estaba registrado
 - Que el endpoint responda en ambos casos con la propiedad `id ` 
 
-
+---
 
 ###### ISSUE 4 - Empleados - ABM
 
