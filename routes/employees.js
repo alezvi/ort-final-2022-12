@@ -2,13 +2,13 @@ var express = require('express');
 var router = express.Router();
 var employee = require('../src/repositories/employees');
 
-router.get('/', async function (req, res, next) {
+/* router.get('/', async function (req, res, next) {
     try {
         res.json(await employee.getAll());
     } catch (e) {
         res.status(500).json({ "message": e })
     }
-});
+}); */
 
 router.post('/', async function (req, res, next) {
     console.log(req.body.dni);
@@ -63,5 +63,19 @@ router.post('/', async function (req, res, next) {
         res.status(404)
     }
 }),
+
+router.get('/', async function (req, res, next) {
+    console.log(req.query);
+    if (req.query.dni) {
+        return res.json(await employee.exist(req.query.dni))
+    }
+    if (req.query.name) {
+        return res.json(await employee.getByName(req.query.name))
+    }
+    if (req.query.sureName) {
+         return res.json(await employee.getBySureName(req.query.sureName))
+    }
+    res.end()
+});
 
     module.exports = router;
