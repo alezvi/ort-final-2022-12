@@ -3,25 +3,25 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    return queryInterface.bulkInsert('Users', [{
-      userName: 'Juan',
-      lastName: 'Suarez',
+    return queryInterface.bulkInsert('Employees', [{
+      name: 'Juan',
+      sureName: 'Suarez',
       dni: '25857458',
       admissionDate: new Date(),
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      userName: 'Alberto',
-      lastName: 'Sanchez',
+      name: 'Alberto',
+      sureName: 'Sanchez',
       dni: '30547855',
       admissionDate: new Date(),
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      userName: 'Adrian',
-      lastName: 'Garcia',
+      name: 'Adrian',
+      sureName: 'Garcia',
       dni: '15477844',
       admissionDate: new Date(),
       createdAt: new Date(),
