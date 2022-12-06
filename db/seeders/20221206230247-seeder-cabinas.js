@@ -1,6 +1,6 @@
 'use strict';
 
-const { randCounty , randNumber } = require('@ngneat/falso')
+const { randCounty , randNumber, randFullAddress } = require('@ngneat/falso')
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
@@ -11,8 +11,11 @@ module.exports = {
     for (var i = 0; i < 50; i++) {
 
       cabinas.push({
-          ubicacion : randCounty(),
-          numero : randNumber({min: 1, max: 10}),       
+          direccion : randFullAddress(),
+          provincia : randCounty(),
+          nRuta : randNumber({min: 1, max: 100}),
+          kilometro : randNumber({min: 1, max: 999}),
+          numeroCabina: randNumber({min: 1, max: 10}),       
           createdAt: new Date,
           updatedAt: new Date,
         });
