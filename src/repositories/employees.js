@@ -15,12 +15,13 @@ async function getAll() {
 }
 
 async function exist(dni){
+    console.log(dni);
     return await  Employee.findOne({ where: {dni : dni}})
 }
 
 async function save(name,sureName,dni){
     let admissionDate = new Date();
-    return await User.create ({
+    return await Employee.create ({
         name,
         sureName,
         dni,
