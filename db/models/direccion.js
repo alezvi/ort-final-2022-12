@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   class Direccion extends Model {
 
     static associate(models) {
-      
+      Direccion.hasMany(models.Peaje)
     }
   }
   Direccion.init({
