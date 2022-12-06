@@ -9,10 +9,16 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      ubicacion: {
+      direccion: {
         type: Sequelize.STRING
       },
-      numero: {
+      nRuta: {
+        type: Sequelize.INTEGER
+      },
+      kilometro: {
+        type: Sequelize.INTEGER
+      },
+      numeroCabina: {
         type: Sequelize.INTEGER
       },
       createdAt: {

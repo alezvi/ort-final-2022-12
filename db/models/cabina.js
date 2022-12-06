@@ -14,8 +14,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Cabina.init({
-    ubicacion: DataTypes.STRING,
-    numero: DataTypes.INTEGER
+    direccion: DataTypes.STRING,
+    nRuta: DataTypes.INTEGER,
+    kilometro: DataTypes.INTEGER,
+    numeroCabina: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Cabina',

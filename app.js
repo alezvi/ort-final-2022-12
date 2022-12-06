@@ -18,6 +18,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+const {Cabina} = require('./db/models');
+
 app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
@@ -36,8 +38,15 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-//listar peaje
+//listar todos los peaje
 
+app.get('listar-peajes', async function(req, res){
+
+  // Cada peaje debe incluir la dirección donde se encuentra. La dirección debe especificar
+  // provincia, número de ruta, y kilómetro. No es necesario usar datos geográficos reales,
+  // pero que parezcan reales.
+
+})
 
 
 module.exports = app;
