@@ -6,16 +6,23 @@ const queryAttributes = {
     }
 }
 
-async function getAll() {
+async function getByName(name) {
     let query = {
-        where: {},
+        where: {name:name},
+        attributes: queryAttributes.attributes,
+    }
+    return await Employee.findAll(query)
+}
+
+async function getBySureName(sureName) {
+    let query = {
+        where: {sureName:sureName},
         attributes: queryAttributes.attributes,
     }
     return await Employee.findAll(query)
 }
 
 async function exist(dni){
-    console.log(dni);
     return await  Employee.findOne({ where: {dni : dni}})
 }
 
@@ -31,7 +38,8 @@ async function save(name,sureName,dni){
 }
 
 module.exports = {
-    getAll,
+    getByName,
+    getBySureName,
     exist,
     save
 }
