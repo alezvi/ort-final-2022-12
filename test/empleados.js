@@ -141,7 +141,7 @@ describe("Empleados", function () {
         .expect("Content-Type", /json/)
         .expect(200)
         .end(function (err, res) {
-          assert.equal(res.body.length, 2);
+          assert.equal(res.body.length, 1);
           if (err) throw err;
           return done();
         });
