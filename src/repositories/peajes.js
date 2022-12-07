@@ -10,6 +10,11 @@ async function getAll() {
     return await Peaje.findAll(query);
 }
 
+async function getById(id) {
+    return await Peaje.findByPk(id);
+}
+
 module.exports = {
-    getAll
+    getAll,
+    getById
 }
