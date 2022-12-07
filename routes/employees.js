@@ -26,33 +26,33 @@ router.post('/', async function (req, res, next) {
             "description": "El empleado ya existe",
         })
     }
-    if (req.body.name == null) {
+    if (!req.body.name) {
         return res.status(400).json({
-            "message": "NULL_NAME",
+            "message": "MISSING_NAME",
             "description": "se debe ingresar un nombre",
         })
     }
-    if (req.body.sureName == null) {
+    if (!req.body.sureName) {
         return res.status(400).json({
-            "message": "NULL_SURE_NAME",
+            "message": "MISSING_SURE_NAME",
             "description": "se debe ingresar un apellido",
         })
     }
-    if (req.body.dni < 10000000 && req.body.dni > 70000000) {
+    if (req.body.dni < 10000000 || req.body.dni > 70000000) {
         return res.status(400).json({
             "message": "INVALID_DNI",
             "description": "El dni es invalido",
         })
     }
-    if (req.body.name > 50) {
+    if (req.body.name.length > 2 || req.body.name.length < 50) {
         return res.status(400).json({
-            "message": "NAME_TOO_LONG",
+            "message": "INVALID_NAME",
             "description": "El nombre no debe superar los 50 caracteres",
         })
     }
-    if (req.body.sureName > 50) {
+    if (req.body.sureName.length > 2 || req.body.sureName.length < 50) {
         return res.status(400).json({
-            "message": "SURENAME_TOO_LONG",
+            "message": "INVALID_SURE_NAME",
             "description": "El apellido no debe superar los 50 caracteres",
         })
     }
@@ -75,7 +75,7 @@ router.get('/', async function (req, res, next) {
     if (req.query.sureName) {
          return res.json(await employee.getBySureName(req.query.sureName))
     }
-    res.end()
+    return res.status(204).end()
 });
 
     module.exports = router;
