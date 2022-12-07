@@ -1,6 +1,6 @@
 'use strict';
 const {
-  Model
+  Model, Sequelize
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class TipoTarifa extends Model {
@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'TipoTarifa',
-    tableName: 'TiposTarifas',
+    tableName: 'tipotarifas',
   });
   return TipoTarifa;
 };
