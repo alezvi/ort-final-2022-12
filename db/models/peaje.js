@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Peaje.hasMany(models.Cabina)
+      Peaje.hasMany(models.Cabina, {foreignKey: "cabinaId"})
     }
   }
   Peaje.init({
