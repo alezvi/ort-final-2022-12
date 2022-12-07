@@ -6,7 +6,7 @@ describe('Autenticación de cabinas de Peajes', function(){
     describe('Creacion de una nueva cabina', function(){
         it('Si la cabina no existe puedo crearla', function(done){
             request(app)
-                .post('/peajes')
+                .post('/peajes/')
                 .send({
                     numero: 1,
                     direccion: 1
