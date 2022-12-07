@@ -35,13 +35,15 @@ describe ('Peajes', function() {
                 return done();
             })
 
+        })
+
             it('Que incluya la direccion como objeto anidado', function (done) {
                 request(app)
                 .get('/peajes')
                 .expect(200)
                 .end(function (res,err) {
                     assert.equal(res.body[0].provincia,'Buenos Aires')
-                    assert.equal(res.body[0].provincia,'Buenos Aires')
+                    assert.equal(res.body[0].ruta,'5')
                     if(err) return done(err);
                     return done();
                 })
