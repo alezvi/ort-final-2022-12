@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": null,
+    "password": "pipi022014",
     "database": "examen_final_2022_12",
     "host": "127.0.0.1",
     "dialect": "mysql"
