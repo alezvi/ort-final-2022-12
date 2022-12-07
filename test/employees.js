@@ -85,5 +85,13 @@ describe('Employees', function () {
                 assert.equal(res.body.message, "INVALID_NAME");
             })
     })
+    /* it('POST/Employee - Created', async function () {
+        return request(app)
+            .post('/employees')
+            .send({ name: "Horacio", sureName: "Kabak", dni: 28445646})
+            .then(res => {
+                assert.equal(res.status, 201);
+            })
+    }) */
 
 })
